@@ -50,11 +50,12 @@ VAE_MODELS=(
     "https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors"
 )
 
-ESRGAN_MODELS=(
+UPSCALE_MODELS=(
     "https://huggingface.co/Kim2091/AnimeSharpV3/resolve/main/2x-AnimeSharpV3.pth"
 )
 
-CONTROLNET_MODELS=(
+ULTRALYTICS=(
+    "https://civitai.com/api/download/models/168820?token=5fb37fbd25ef6e4438561cfde9650f12" # eyes detailer model
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
@@ -80,14 +81,14 @@ function provisioning_start() {
         "${WORKSPACE}/storage/stable_diffusion/models/lora" \
         "${LORA_MODELS[@]}"
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/controlnet" \
-        "${CONTROLNET_MODELS[@]}"
+        "${WORKSPACE}/storage/stable_diffusion/models/ultralytics" \
+        "${ULTRALYTICS[@]}"
     provisioning_get_models \
         "${WORKSPACE}/storage/stable_diffusion/models/vae" \
         "${VAE_MODELS[@]}"
     provisioning_get_models \
-        "${WORKSPACE}/storage/stable_diffusion/models/esrgan" \
-        "${ESRGAN_MODELS[@]}"
+        "${WORKSPACE}/storage/stable_diffusion/models/upscale_models" \
+        "${UPSCALE_MODELS[@]}"
     provisioning_print_end
 }
 
