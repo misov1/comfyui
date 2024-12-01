@@ -55,7 +55,7 @@ UPSCALE_MODELS=(
 )
 
 ULTRALYTICS=(
-    "https://civitai.com/api/download/models/168820" # eyes detailer model
+    #"https://civitai.com/api/download/models/168820" # eyes detailer model
 )
 
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
