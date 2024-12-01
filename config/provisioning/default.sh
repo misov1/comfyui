@@ -35,9 +35,9 @@ NODES=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://civitai.com/api/download/models/1116447?type=Model&format=SafeTensor&size=full&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NoobAI-XL Epsilon-pred 1.1
-    "https://civitai.com/api/download/models/1061268?type=Model&format=SafeTensor&size=full&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V4.0
-    "https://civitai.com/api/download/models/1077762?type=Model&format=SafeTensor&size=full&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V2.1#
+    "https://civitai.com/api/download/models/1116447?type=Model&format=SafeTensor&size=full&fp=bf16&token=5fb37fbd25ef6e4438561cfde9650f12" # NoobAI-XL Epsilon-pred 1.1
+    "https://civitai.com/api/download/models/1061268?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V4.0
+    "https://civitai.com/api/download/models/1077762?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V2.1#
 )
 
 LORA_MODELS=(
@@ -58,14 +58,17 @@ ULTRALYTICS=(
     #"https://civitai.com/api/download/models/168820?token=5fb37fbd25ef6e4438561cfde9650f12" # eyes detailer model
 )
 
-### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
-
+### DO NOT EDIT BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING ###
 function provisioning_start() {
     if [[ ! -d /opt/environments/python ]]; then 
         export MAMBA_BASE=true
     fi
     source /opt/ai-dock/etc/environment.sh
     source /opt/ai-dock/bin/venv-set.sh comfyui
+
+    DISK_GB_AVAILABLE=$(($(df --output=avail -m "${WORKSPACE}" | tail -n1) / 1000))
+    DISK_GB_USED=$(($(df --output=used -m "${WORKSPACE}" | tail -n1) / 1000))
+    DISK_GB_ALLOCATED=$(($DISK_GB_AVAILABLE + $DISK_GB_USED))
 
     provisioning_print_header
     provisioning_get_apt_packages
@@ -91,6 +94,7 @@ function provisioning_start() {
         "${UPSCALE_MODELS[@]}"
     provisioning_print_end
 }
+
 
 function pip_install() {
     if [[ -z $MAMBA_BASE ]]; then
@@ -146,7 +150,6 @@ function provisioning_get_default_workflow() {
 
 function provisioning_get_models() {
     if [[ -z $2 ]]; then return 1; fi
-    
     dir="$1"
     mkdir -p "$dir"
     shift
@@ -159,62 +162,8 @@ function provisioning_get_models() {
     done
 }
 
-function provisioning_print_header() {
-    printf "\n##############################################\n#                                            #\n#          Provisioning container            #\n#                                            #\n#         This will take some time           #\n#                                            #\n# Your container will be ready on completion #\n#                                            #\n##############################################\n\n"
-    if [[ $DISK_GB_ALLOCATED -lt $DISK_GB_REQUIRED ]]; then
-        printf "WARNING: Your allocated disk size (%sGB) is below the recommended %sGB - Some models will not be downloaded\n" "$DISK_GB_ALLOCATED" "$DISK_GB_REQUIRED"
-    fi
-}
-
-function provisioning_print_end() {
-    printf "\nProvisioning complete:  Web UI will start now\n\n"
-}
-
-function provisioning_has_valid_hf_token() {
-    [[ -n "$HF_TOKEN" ]] || return 1
-    url="https://huggingface.co/api/whoami-v2"
-
-    response=$(curl -o /dev/null -s -w "%{http_code}" -X GET "$url" \
-        -H "Authorization: Bearer $HF_TOKEN" \
-        -H "Content-Type: application/json")
-
-    # Check if the token is valid
-    if [ "$response" -eq 200 ]; then
-        return 0
-    else
-        return 1
-    fi
-}
-
-function provisioning_has_valid_civitai_token() {
-    [[ -n "$CIVITAI_TOKEN" ]] || return 1
-    url="https://civitai.com/api/v1/models?hidden=1&limit=1"
-
-    response=$(curl -o /dev/null -s -w "%{http_code}" -X GET "$url" \
-        -H "Authorization: Bearer $CIVITAI_TOKEN" \
-        -H "Content-Type: application/json")
-
-    # Check if the token is valid
-    if [ "$response" -eq 200 ]; then
-        return 0
-    else
-        return 1
-    fi
-}
-
-# Download from $1 URL to $2 file path
 function provisioning_download() {
-    if [[ -n $HF_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?huggingface\.co(/|$|\?) ]]; then
-        auth_token="$HF_TOKEN"
-    elif 
-        [[ -n $CIVITAI_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?civitai\.com(/|$|\?) ]]; then
-        auth_token="$CIVITAI_TOKEN"
-    fi
-    if [[ -n $auth_token ]];then
-        wget --header="Authorization: Bearer $auth_token" -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
-    else
-        wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
-    fi
+    wget -qnc --content-disposition --show-progress -P "$2" "$1"
 }
 
 provisioning_start
