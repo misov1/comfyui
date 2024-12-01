@@ -31,6 +31,7 @@ NODES=(
     "https://github.com/JPS-GER/ComfyUI_JPS-Nodes"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/kijai/ComfyUI-KJNodes"
+    "https://github.com/misov1/ComfyUI-image-size-templet"
     "https://github.com/NyaamZ/efficiency-nodes-ED"
 )
 
