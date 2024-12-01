@@ -32,16 +32,15 @@ NODES=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://civitai.com/api/download/models/1022833?token=5fb37fbd25ef6e4438561cfde9650f12" # NoobAI-XL Epsilon-pred 1.0
+    "https://civitai.com/api/download/models/1116447?token=5fb37fbd25ef6e4438561cfde9650f12" # NoobAI-XL Epsilon-pred 1.1
     "https://civitai.com/api/download/models/1061268?token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V4.0
     "https://civitai.com/api/download/models/1077762?token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V2.1#
 )
 
 LORA_MODELS=(
     "https://civitai.com/api/download/models/1031052?token=5fb37fbd25ef6e4438561cfde9650f12" # AI styles dump / all-in-one noob eps1.0_v1
-    "https://civitai.com/api/download/models/954424?token=5fb37fbd25ef6e4438561cfde9650f12" # AI styles dump / dj_sloppa_illust_v2
     "https://civitai.com/api/download/models/1003884?token=5fb37fbd25ef6e4438561cfde9650f12" # deal360acv illust 006
-    "https://civitai.com/api/download/models/934002?token=5fb37fbd25ef6e4438561cfde9650f12" # nyalia illustrious
+    "https://civitai.com/api/download/models/1103997?token=5fb37fbd25ef6e4438561cfde9650f12" # nyalia illustrious
 )
 
 VAE_MODELS=(
