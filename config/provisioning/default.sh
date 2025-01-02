@@ -36,19 +36,22 @@ NODES=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://civitai.com/api/download/models/1116447?type=Model&format=SafeTensor&size=full&fp=bf16&token=5fb37fbd25ef6e4438561cfde9650f12" # NoobAI-XL Epsilon-pred 1.1
+    "https://civitai.com/api/download/models/1138482?type=Model&format=SafeTensor&size=full&fp=bf16&token=5fb37fbd25ef6e4438561cfde9650f12" # NoobAI-XL Epsilon-pred v1.1
     "https://civitai.com/api/download/models/1118807?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V777
     "https://civitai.com/api/download/models/1118881?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V777 LoRA#
+    "https://civitai.com/api/download/models/1211518?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # CherryMIX_XL_V1
 )
-
+ccc
 LORA_MODELS=(
-    "https://civitai.com/api/download/models/1031052?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # AI styles dump / all-in-one noob eps1.0_v1
+    "https://civitai.com/api/download/models/1031052?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # AI styles dump / all-in-one noob eps1.1_v3.1
+    "https://civitai.com/api/download/models/954424?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # AI styles dump / dj_sloppa_ill_v2
     "https://civitai.com/api/download/models/1003884?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # deal360acv illust 006
     "https://civitai.com/api/download/models/1103997?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # nyalia illustrious
 )
 
 VAE_MODELS=(
     "https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors"
+    "https://civitai.com/api/download/models/1211518?type=VAE&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
 )
 
 UPSCALE_MODELS=(
