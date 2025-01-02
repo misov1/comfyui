@@ -46,7 +46,9 @@ LORA_MODELS=(
     "https://civitai.com/api/download/models/1138482?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # AI styles dump / all-in-one noob eps1.1_v3.1
     "https://civitai.com/api/download/models/954424?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # AI styles dump / dj_sloppa_ill_v2
     "https://civitai.com/api/download/models/1003884?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # deal360acv illust 006
-    "https://civitai.com/api/download/models/1103997?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # nyalia illustrious
+    "https://civitai.com/api/download/models/1103997?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # nyalia NTR4 V531
+    "https://civitai.com/api/download/models/934002?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # nyalia
+    
 )
 
 VAE_MODELS=(
