@@ -23,10 +23,8 @@ NODES=(
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
     "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
     "https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
-    "https://github.com/comfyanonymous/ComfyUI_TensorRT"
     "https://github.com/jags111/efficiency-nodes-comfyui"
     "https://github.com/LEv145/images-grid-comfy-plugin"
-    "https://github.com/SLAPaper/ComfyUI-Image-Selector"
     "https://github.com/pythongosssss/ComfyUI-Custom-Scripts"
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     "https://github.com/JPS-GER/ComfyUI_JPS-Nodes"
@@ -37,10 +35,12 @@ NODES=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://civitai.com/api/download/models/1116447?type=Model&format=SafeTensor&size=full&fp=bf16&token=5fb37fbd25ef6e4438561cfde9650f12" # NoobAI-XL Epsilon-pred v1.1
+    "https://civitai.com/api/download/models/1116447?type=Model&format=SafeTensor&size=full&fp=bf16&token=5fb37fbd25ef6e4438561cfde9650f12" # NoobAI-XL Epsilon-Pred v1.1
+    "https://civitai.com/api/download/models/1190596?type=Model&format=SafeTensor&size=full&fp=bf16&token=5fb37fbd25ef6e4438561cfde9650f12" # NoobAI-XL V-Pred-v1.0
     "https://civitai.com/api/download/models/1211518?type=Model&format=SafeTensor&size=full&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # CherryMIX_XL_V1
     "https://civitai.com/api/download/models/1118807?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V777
-    "https://civitai.com/api/download/models/1118881?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V777 LoRA#
+    "https://civitai.com/api/download/models/1118881?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V777 LoRA
+    "https://civitai.com/api/download/models/1166878?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix XIII
 )
 LORA_MODELS=(
     "https://civitai.com/api/download/models/1138482?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # AI styles dump / all-in-one noob eps1.1_v3.1
