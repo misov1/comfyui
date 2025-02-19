@@ -61,6 +61,7 @@ VAE_MODELS=(
 
 UPSCALE_MODELS=(
     "https://huggingface.co/Kim2091/AnimeSharpV3/resolve/main/2x-AnimeSharpV3.pth"
+    "https://huggingface.co/Kim2091/2x-AnimeSharpV4/blob/main/2x-AnimeSharpV4_RCAN.safetensors"
 )
 
 ULTRALYTICS=(
