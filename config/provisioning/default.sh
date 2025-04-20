@@ -43,6 +43,7 @@ CHECKPOINT_MODELS=(
 #    "https://civitai.com/api/download/models/1118881?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V777 LoRA
 #    "https://civitai.com/api/download/models/1166878?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix XIII
     "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_final50.safetensors" # NoobAI-XL custom merge model
+    "https://huggingface.co/baqu2213/PoemForSmallFThings/blob/main/NAI-XL_vpred1.0_2dac_Bluemint11.safetensors" # NoobAI-XL custom merge model+
 )
 
 LORA_MODELS=(
