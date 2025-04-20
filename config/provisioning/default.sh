@@ -23,6 +23,7 @@ NODES=(
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
     "https://github.com/ltdrdata/ComfyUI-Impact-Subpack"
     "https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
+    "https://github.com/Koishi-Star/Euler-Smea-Dyn-Sampler"
     "https://github.com/jags111/efficiency-nodes-comfyui"
     "https://github.com/LEv145/images-grid-comfy-plugin"
     "https://github.com/pythongosssss/ComfyUI-Custom-Scripts"
