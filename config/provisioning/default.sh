@@ -14,8 +14,7 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    #"package-1"
-    #"package-2"
+    "spandrel"    # python -m pip install spandrel --upgrade
 )
 
 NODES=(
@@ -39,7 +38,7 @@ CHECKPOINT_MODELS=(
 #    "https://civitai.com/api/download/models/1116447?type=Model&format=SafeTensor&size=full&fp=bf16&token=5fb37fbd25ef6e4438561cfde9650f12" # NoobAI-XL Epsilon-Pred v1.1
 #    "https://civitai.com/api/download/models/1190596?type=Model&format=SafeTensor&size=full&fp=bf16&token=5fb37fbd25ef6e4438561cfde9650f12" # NoobAI-XL V-Pred-v1.0
 #    "https://civitai.com/api/download/models/1294597?type=Model&format=SafeTensor&size=full&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # RoseMIX_XL_V2
-    "https://civitai.com/api/download/models/1294603?type=Model&format=SafeTensor&size=full&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # CherryMIX_XL_V3
+#    "https://civitai.com/api/download/models/1294603?type=Model&format=SafeTensor&size=full&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # CherryMIX_XL_V3
 #    "https://civitai.com/api/download/models/1118807?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V777
 #    "https://civitai.com/api/download/models/1118881?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V777 LoRA
 #    "https://civitai.com/api/download/models/1166878?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix XIII
