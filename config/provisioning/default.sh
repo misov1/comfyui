@@ -14,7 +14,7 @@ APT_PACKAGES=(
 )
 
 PIP_PACKAGES=(
-    "spandrel"    # python -m pip install spandrel --upgrade
+#    "spandrel"    # python -m pip install spandrel --upgrade
 )
 
 NODES=(
@@ -123,7 +123,7 @@ function provisioning_get_apt_packages() {
 
 function provisioning_get_pip_packages() {  # python -m pip install spandrel --upgrade
     if [[ -n $PIP_PACKAGES ]]; then
-            pip install ${PIP_PACKAGES[@]} --upgrade
+            pip install ${PIP_PACKAGES[@]}
     fi
 }
 
