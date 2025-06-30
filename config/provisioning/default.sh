@@ -42,8 +42,8 @@ CHECKPOINT_MODELS=(
 #    "https://civitai.com/api/download/models/1118807?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V777
 #    "https://civitai.com/api/download/models/1118881?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix V777 LoRA
 #    "https://civitai.com/api/download/models/1166878?type=Model&format=SafeTensor&size=pruned&fp=fp16&token=5fb37fbd25ef6e4438561cfde9650f12" # NTR Mix XIII
-    "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_final50.safetensors" # NoobAI-XL custom merge model
-    "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_Bluemint11.safetensors" # NoobAI-XL custom merge model+
+#    "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_final50.safetensors" # NoobAI-XL custom merge model
+    "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_colorized_style2.safetensors" # NoobAI-XL custom merge model+
 )
 
 LORA_MODELS=(
@@ -56,8 +56,8 @@ LORA_MODELS=(
 )
 
 VAE_MODELS=(
-    "https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors"
-    "https://civitai.com/api/download/models/1211518?type=VAE&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
+#    "https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors"
+#    "https://civitai.com/api/download/models/1211518?type=VAE&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
 )
 
 UPSCALE_MODELS=(
@@ -121,9 +121,9 @@ function provisioning_get_apt_packages() {
     fi
 }
 
-function provisioning_get_pip_packages() {
+function provisioning_get_pip_packages() {  # python -m pip install spandrel --upgrade
     if [[ -n $PIP_PACKAGES ]]; then
-            pip_install ${PIP_PACKAGES[@]}
+            pip install ${PIP_PACKAGES[@]} --upgrade
     fi
 }
 
