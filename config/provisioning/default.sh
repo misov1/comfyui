@@ -123,7 +123,7 @@ function provisioning_get_apt_packages() {
 
 function provisioning_get_pip_packages() {  # python -m pip install spandrel --upgrade
     if [[ -n $PIP_PACKAGES ]]; then
-            pip install ${PIP_PACKAGES[@]}
+            pip_install ${PIP_PACKAGES[@]}
     fi
 }
 
