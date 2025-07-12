@@ -47,10 +47,10 @@ UNET_MODELS=(
 
 LORA_MODELS=(
 #    "https://civitai.com/api/download/models/1138482?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # AI styles dump / all-in-one noob eps1.1_v3.1
-    "https://civitai.com/api/download/models/954424?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # AI styles dump / dj_sloppa_ill_v2
-    "https://civitai.com/api/download/models/1003884?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # deal360acv illust 006
+#    "https://civitai.com/api/download/models/954424?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # AI styles dump / dj_sloppa_ill_v2
+#    "https://civitai.com/api/download/models/1003884?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # deal360acv illust 006
 #    "https://civitai.com/api/download/models/1103997?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # nyalia NTR4 V531
-    "https://civitai.com/api/download/models/934002?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # nyalia
+#    "https://civitai.com/api/download/models/934002?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12" # nyalia
 )
 
 VAE_MODELS=(
@@ -58,7 +58,7 @@ VAE_MODELS=(
 )
 
 ESRGAN_MODELS=(
-    "https://huggingface.co/Kim2091/AnimeSharpV3/resolve/main/2x-AnimeSharpV3.pth"
+#    "https://huggingface.co/Kim2091/AnimeSharpV3/resolve/main/2x-AnimeSharpV3.pth"
     "https://huggingface.co/Kim2091/2x-AnimeSharpV4/resolve/1a9339b5c308ab3990f6233be2c1169a75772878/2x-AnimeSharpV4_RCAN.safetensors"
 )
 
