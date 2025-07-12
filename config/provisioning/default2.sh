@@ -32,6 +32,7 @@ NODES=(
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/misov1/ComfyUI-image-size-templet"
+    "https://github.com/bedovyy/ComfyUI_NAIDGenerator"
     "https://github.com/NyaamZ/efficiency-nodes-ED"
 )
 
