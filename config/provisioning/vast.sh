@@ -31,6 +31,15 @@ NODES=(
     "https://github.com/misov1/ComfyUI-image-size-templet"
     "https://github.com/bedovyy/ComfyUI_NAIDGenerator"
     "https://github.com/NyaamZ/efficiency-nodes-ED"
+    # Smooth Mix Wan 2.2 node
+    "https://github.com/melMass/comfy_mtb"
+    "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation"
+    "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    "https://github.com/city96/ComfyUI-GGUF"
+    "https://github.com/kijai/ComfyUI-Florence2"
+    "https://github.com/yolain/ComfyUI-Easy-Use"
+    "https://github.com/Smirnov75/ComfyUI-mxToolkit"
+    "https://github.com/KLL535/ComfyUI_PNGInfo_Sidebar"
 )
 
 WORKFLOWS=(
@@ -40,6 +49,7 @@ WORKFLOWS=(
 CHECKPOINT_MODELS=(
     "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_colorized.safetensors" # NoobAI-XL custom merge model
 #    "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_colorized_style2.safetensors" # NoobAI-XL custom merge model+ color 2D Str
+    "https://civitai.com/api/download/models/2289321?type=Archive&format=Other&token=5fb37fbd25ef6e4438561cfde9650f12" # Smooth Mix Wan 2.2
 )
 
 UNET_MODELS=(
