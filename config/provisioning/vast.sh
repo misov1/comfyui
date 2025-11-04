@@ -43,13 +43,16 @@ NODES=(
 )
 
 WORKFLOWS=(
-
+    "https://raw.githubusercontent.com/misov1/comfyui/refs/heads/main/9411e2d2d0bf3b676795561584aaf097a9186c797b2ca20dc6c9c13e79843c30.png"
 )
 
 CHECKPOINT_MODELS=(
     "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_colorized.safetensors" # NoobAI-XL custom merge model
 #    "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_colorized_style2.safetensors" # NoobAI-XL custom merge model+ color 2D Str
     "https://civitai.com/api/download/models/2289321?type=Archive&format=Other&token=5fb37fbd25ef6e4438561cfde9650f12" # Smooth Mix Wan 2.2
+    "https://huggingface.co/Bedovyy/smoothMixWan22-I2V-GGUF/resolve/main/HighNoise/smoothMixWan22I2VT2V_i2vHigh-Q8_0.gguf" # smoothMixWan2.2 I2V Q8_High
+    "https://huggingface.co/Bedovyy/dasiwaWAN22I2V14B-GGUF/resolve/LureNoir/LowNoise/dasiwaWAN22I2V14B_lurenoirLow-Q8_0.gguf" #dasiwaWan2.2 I2V Q8_Low
+
 )
 
 UNET_MODELS=(
