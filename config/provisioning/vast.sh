@@ -61,7 +61,14 @@ CHECKPOINT_MODELS=(
 UNET_MODELS=(
     "https://huggingface.co/Bedovyy/smoothMixWan22-I2V-GGUF/resolve/main/HighNoise/smoothMixWan22I2VT2V_i2vHigh-Q8_0.gguf" # smoothMixWan2.2 I2V Q8_High
     "https://huggingface.co/Bedovyy/dasiwaWAN22I2V14B-GGUF/resolve/LureNoir/LowNoise/dasiwaWAN22I2V14B_lurenoirLow-Q8_0.gguf" #dasiwaWan2.2 I2V Q8_Low
+    
+)
+
+TEXT_ENCODERS=(
     "https://huggingface.co/chatpig/encoder/resolve/main/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+)
+
+CLIP_VISION=(
     "https://huggingface.co/calcuis/wan-gguf/resolve/f52f5a1f0ba441d50277fb7cdd7c1b36611837f9/clip_vision_h.safetensors"
 )
 
@@ -107,6 +114,12 @@ function provisioning_start() {
     provisioning_get_files \
         "${COMFYUI_DIR}/models/upscale_models" \
         "${UPSCALE_MODELS[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/text_encoders" \
+        "${TEXT_ENCODERS[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/clip_vision" \
+        "${CLIP_VISION[@]}"
     provisioning_print_end
 }
 
