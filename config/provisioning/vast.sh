@@ -40,6 +40,14 @@ NODES=(
     "https://github.com/yolain/ComfyUI-Easy-Use"
     "https://github.com/Smirnov75/ComfyUI-mxToolkit"
     "https://github.com/KLL535/ComfyUI_PNGInfo_Sidebar"
+    "https://github.com/AlekPet/ComfyUI_Custom_Nodes_AlekPet"
+    "https://github.com/chrisgoringe/cg-use-everywhere"
+    "https://github.com/stavsap/comfyui-ollama"
+    "https://github.com/pollockjj/ComfyUI-MultiGPU"
+    "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes"
+    "https://github.com/jamesWalker55/comfyui-various"
+    "https://github.com/orssorbit/ComfyUI-wanBlockswap"
+    "https://github.com/royceschultz/ComfyUI-Notifications"
 )
 
 WORKFLOWS=(
