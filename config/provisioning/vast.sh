@@ -48,6 +48,7 @@ NODES=(
     "https://github.com/jamesWalker55/comfyui-various"
     "https://github.com/orssorbit/ComfyUI-wanBlockswap"
     "https://github.com/royceschultz/ComfyUI-Notifications"
+    "https://github.com/chflame163/ComfyUI_LayerStyle"
 )
 
 WORKFLOWS=(
