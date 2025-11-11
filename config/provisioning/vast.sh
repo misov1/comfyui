@@ -73,10 +73,20 @@ CLIP_VISION=(
     "https://huggingface.co/calcuis/wan-gguf/resolve/f52f5a1f0ba441d50277fb7cdd7c1b36611837f9/clip_vision_h.safetensors"
 )
 
+SAMS=(
+    "https://huggingface.co/geauxeric/sam/resolve/main/sam_vit_b_01ec64.safetensors"
+)
+
+BBOX=(
+    "https://huggingface.co/lmz/candle-yolo-v8/resolve/main/yolov8m.safetensors"
+)
+
 LORA_MODELS=(
 #    "https://civitai.com/api/download/models/1978226?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
 #    "https://civitai.com/api/download/models/2032913?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
 #    "https://civitai.com/api/download/models/2078007?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
+    "https://civitai.com/api/download/models/2209354?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
+    "https://civitai.com/api/download/models/2209344?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
 )
 
 VAE_MODELS=(
@@ -121,6 +131,12 @@ function provisioning_start() {
     provisioning_get_files \
         "${COMFYUI_DIR}/models/clip_vision" \
         "${CLIP_VISION[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/sams" \
+        "${SAMS[@]}"
+    provisioning_get_files \
+        "${COMFYUI_DIR}/models/ultralytics/bbox" \
+        "${BBOX[@]}"
     provisioning_print_end
 }
 
