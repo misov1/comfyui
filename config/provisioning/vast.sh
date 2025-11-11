@@ -26,6 +26,7 @@ NODES=(
     "https://github.com/pythongosssss/ComfyUI-Custom-Scripts"
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     "https://github.com/JPS-GER/ComfyUI_JPS-Nodes"
+    "https://github.com/ltdrdata/comfyui-unsafe-torch"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/misov1/ComfyUI-image-size-templet"
