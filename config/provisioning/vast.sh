@@ -30,6 +30,8 @@ NODES=(
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/kijai/ComfyUI-KJNodes"
     "https://github.com/misov1/ComfyUI-image-size-templet"
+    "https://github.com/PozzettiAndrea/ComfyUI-SAM3"
+    "https://github.com/ltdrdata/was-node-suite-comfyui"
     "https://github.com/bedovyy/ComfyUI_NAIDGenerator"
     "https://github.com/NyaamZ/efficiency-nodes-ED"
     # Smooth Mix Wan 2.2 node
@@ -56,13 +58,16 @@ WORKFLOWS=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_colorized.safetensors" # NoobAI-XL custom merge model
-#    "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_colorized_style2.safetensors" # NoobAI-XL custom merge model+ color 2D Str
+#    "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_colorized.safetensors" # NoobAI-XL custom merge model
+    "https://huggingface.co/ChenkinNoob/ChenkinNoob-XL-V0.2/resolve/main/ChenkinNoob-XL-V0.2.safetensors" # ChenkinNoob-XL V0.2
+    "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_colorized_style2.safetensors" # NoobAI-XL custom merge model+ color 2D Str
 )
 
 UNET_MODELS=(
     "https://huggingface.co/Bedovyy/smoothMixWan22-I2V-GGUF/resolve/main/HighNoise/smoothMixWan22I2VT2V_i2vHigh-Q8_0.gguf" # smoothMixWan2.2 I2V Q8_High
-    "https://huggingface.co/Bedovyy/dasiwaWAN22I2V14B-GGUF/resolve/LureNoir/LowNoise/dasiwaWAN22I2V14B_lurenoirLow-Q8_0.gguf" #dasiwaWan2.2 I2V Q8_Low
+    "https://huggingface.co/Bedovyy/smoothMixWan22-I2V-GGUF/resolve/main/LowNoise/smoothMixWan22I2VT2V_i2vLow-Q8_0.gguf" # smoothMixWan2.2 I2V Q8_Low
+#    "https://huggingface.co/Bedovyy/dasiwaWAN22I2V14B-GGUF/resolve/MidnightFlirt/HighNoise/dasiwaWAN22I2V14B_midnightflirtHigh-Q8_0.gguf" # dasiwaWan2.2 I2V Q8_High
+#    "https://huggingface.co/Bedovyy/dasiwaWAN22I2V14B-GGUF/resolve/MidnightFlirt/LowNoise/dasiwaWAN22I2V14B_midnightflirtLow-Q8_0.gguf" # dasiwaWan2.2 I2V Q8_Low
     
 )
 
@@ -83,15 +88,19 @@ BBOX=(
 )
 
 LORA_MODELS=(
-#    "https://civitai.com/api/download/models/1978226?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
-#    "https://civitai.com/api/download/models/2032913?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
-#    "https://civitai.com/api/download/models/2078007?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
-    "https://civitai.com/api/download/models/2209354?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
-    "https://civitai.com/api/download/models/2209344?type=Model&format=SafeTensor&token=5fb37fbd25ef6e4438561cfde9650f12"
+    "https://civitai.com/api/download/models/2032913?type=Model&format=SafeTensor" # ebora style lora
+    "https://civitai.com/api/download/models/2078007?type=Model&format=SafeTensor" # qiandaiyiyu style lora
+    "https://civitai.com/api/download/models/2132494?type=Model&format=SafeTensor" # BlueArchive Cutscene style
+    "https://civitai.com/api/download/models/2116446?type=Model&format=SafeTensor" # 3D Virtual Anime style
+    "https://civitai.com/api/download/models/1555533?type=Model&format=SafeTensor" # Nyalia style lora based noobAI
+    # Wan2.2 Lora
+    "https://civitai.com/api/download/models/2209354?type=Model&format=SafeTensor" # wan2.2 high bounce lora
+    "https://civitai.com/api/download/models/2209344?type=Model&format=SafeTensor" # wan2.2 low bounce lora
 )
 
 VAE_MODELS=(
-    "https://huggingface.co/calcuis/wan-gguf/resolve/2f41e77bfc957eab2020821463d0cd7b15804bb9/wan_2.1_vae.safetensors"
+    "https://huggingface.co/calcuis/wan-gguf/resolve/2f41e77bfc957eab2020821463d0cd7b15804bb9/wan_2.1_vae.safetensors" # wan vae
+    "https://huggingface.co/Anzhc/Anzhcs-VAEs/resolve/main/MS%20DPipe%20fp32%20112k%20Anime%20VAE%20SDXL.safetensors" # SDLX vae from Anzhc DPip
 )
 
 UPSCALE_MODELS=(
