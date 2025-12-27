@@ -72,11 +72,11 @@ UNET_MODELS=(
 )
 
 TEXT_ENCODERS=(
-#    "https://huggingface.co/chatpig/encoder/resolve/main/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+    "https://huggingface.co/chatpig/encoder/resolve/main/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
 )
 
 CLIP_VISION=(
-#    "https://huggingface.co/calcuis/wan-gguf/resolve/f52f5a1f0ba441d50277fb7cdd7c1b36611837f9/clip_vision_h.safetensors"
+    "https://huggingface.co/calcuis/wan-gguf/resolve/f52f5a1f0ba441d50277fb7cdd7c1b36611837f9/clip_vision_h.safetensors"
 )
 
 SAMS=(
@@ -94,12 +94,12 @@ LORA_MODELS=(
     "https://civitai.com/api/download/models/2116446?type=Model&format=SafeTensor" # 3D Virtual Anime style
     "https://civitai.com/api/download/models/1555533?type=Model&format=SafeTensor" # Nyalia style lora based noobAI
     # Wan2.2 Lora
-#    "https://civitai.com/api/download/models/2209354?type=Model&format=SafeTensor" # wan2.2 high bounce lora
-#    "https://civitai.com/api/download/models/2209344?type=Model&format=SafeTensor" # wan2.2 low bounce lora
+    "https://civitai.com/api/download/models/2209354?type=Model&format=SafeTensor" # wan2.2 high bounce lora
+    "https://civitai.com/api/download/models/2209344?type=Model&format=SafeTensor" # wan2.2 low bounce lora
 )
 
 VAE_MODELS=(
-#    "https://huggingface.co/calcuis/wan-gguf/resolve/2f41e77bfc957eab2020821463d0cd7b15804bb9/wan_2.1_vae.safetensors" # wan vae
+    "https://huggingface.co/calcuis/wan-gguf/resolve/2f41e77bfc957eab2020821463d0cd7b15804bb9/wan_2.1_vae.safetensors" # wan vae
     "https://huggingface.co/Anzhc/Anzhcs-VAEs/resolve/main/MS%20DPipe%20fp32%20112k%20Anime%20VAE%20SDXL.safetensors" # SDLX vae from Anzhc DPip
 )
 
