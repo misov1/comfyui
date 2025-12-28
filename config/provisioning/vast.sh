@@ -100,7 +100,7 @@ LORA_MODELS=(
 
 VAE_MODELS=(
     "https://huggingface.co/calcuis/wan-gguf/resolve/2f41e77bfc957eab2020821463d0cd7b15804bb9/wan_2.1_vae.safetensors" # wan vae
-    "https://huggingface.co/Anzhc/Anzhcs-VAEs/resolve/main/MS%20DPipe%20fp32%20112k%20Anime%20VAE%20SDXL.safetensors" # SDLX vae from Anzhc DPip
+    "https://huggingface.co/misov/vast_used/resolve/main/MS_DPipe_fp32_112k_Anime_VAE_SDXL.safetensors" # SDLX vae from Anzhc DPip
 )
 
 UPSCALE_MODELS=(
