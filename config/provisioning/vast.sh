@@ -59,13 +59,17 @@ WORKFLOWS=(
 
 CHECKPOINT_MODELS=(
 #    "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_colorized.safetensors" # NoobAI-XL custom merge model
-    "https://huggingface.co/ChenkinNoob/ChenkinNoob-XL-V0.2/resolve/main/ChenkinNoob-XL-V0.2.safetensors" # ChenkinNoob-XL V0.2
+#    "https://huggingface.co/ChenkinNoob/ChenkinNoob-XL-V0.2/resolve/main/ChenkinNoob-XL-V0.2.safetensors" # ChenkinNoob-XL V0.2
     "https://huggingface.co/baqu2213/PoemForSmallFThings/resolve/main/NAI-XL_vpred1.0_2dac_colorized_style2.safetensors" # NoobAI-XL custom merge model+ color 2D Str
 )
 
 UNET_MODELS=(
+    "https://civitai.com/api/download/models/2260110?type=Model&format=SafeTensor&size=pruned&fp=fp8" # smoothMixWan2.2 I2V Original High
+#    "https://civitai.com/api/download/models/2259006?type=Model&format=SafeTensor&size=pruned&fp=fp8" # smoothMixWan2.2 I2V Original Low
 #    "https://huggingface.co/Bedovyy/smoothMixWan22-I2V-GGUF/resolve/main/HighNoise/smoothMixWan22I2VT2V_i2vHigh-Q8_0.gguf" # smoothMixWan2.2 I2V Q8_High
 #    "https://huggingface.co/Bedovyy/smoothMixWan22-I2V-GGUF/resolve/main/LowNoise/smoothMixWan22I2VT2V_i2vLow-Q8_0.gguf" # smoothMixWan2.2 I2V Q8_Low
+#    "https://civitai.com/api/download/models/2388548?type=Model&format=SafeTensor&size=full&fp=fp8" # dasiwaWan2.2 I2V Original High
+    "https://civitai.com/api/download/models/2388627?type=Model&format=SafeTensor&size=full&fp=fp8"# dasiwaWan2.2 I2V Original low
 #    "https://huggingface.co/Bedovyy/dasiwaWAN22I2V14B-GGUF/resolve/MidnightFlirt/HighNoise/dasiwaWAN22I2V14B_midnightflirtHigh-Q8_0.gguf" # dasiwaWan2.2 I2V Q8_High
 #    "https://huggingface.co/Bedovyy/dasiwaWAN22I2V14B-GGUF/resolve/MidnightFlirt/LowNoise/dasiwaWAN22I2V14B_midnightflirtLow-Q8_0.gguf" # dasiwaWan2.2 I2V Q8_Low
     
@@ -105,6 +109,7 @@ VAE_MODELS=(
 
 UPSCALE_MODELS=(
     "https://huggingface.co/Kim2091/2x-AnimeSharpV4/resolve/1a9339b5c308ab3990f6233be2c1169a75772878/2x-AnimeSharpV4_RCAN.safetensors"
+    "https://huggingface.co/Kim2091/UltraSharpV2/resolve/main/4x-UltraSharpV2.safetensors"
 )
 
 CONTROLNET_MODELS=(
@@ -242,16 +247,35 @@ function provisioning_has_valid_civitai_token() {
 
 # Download from $1 URL to $2 file path
 function provisioning_download() {
-    if [[ -n $HF_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?huggingface\.co(/|$|\?) ]]; then
-        auth_token="$HF_TOKEN"
-    elif 
-        [[ -n $CIVITAI_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?civitai\.com(/|$|\?) ]]; then
-        auth_token="$CIVITAI_TOKEN"
-    fi
-    if [[ -n $auth_token ]];then
-        wget --header="Authorization: Bearer $auth_token" -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
+    local url="$1"
+    local dir="$2"
+    
+    # For Civitai URLs, handle redirect and get filename from final URL
+    if [[ "$url" == *"civitai.com"* ]]; then
+        printf "Getting filename from Civitai redirect...\n"
+        
+        # Follow redirect and get the final URL
+        local final_url=$(curl -sL -o /dev/null -w '%{url_effective}' "$url")
+        
+        # Extract filename from response-content-disposition parameter in the final URL
+        local filename=$(echo "$final_url" | sed -n 's/.*filename%3D%22\([^%]*\)%22.*/\1/p')
+        
+        # If we couldn't extract filename, try alternative method
+        if [[ -z "$filename" ]]; then
+            # Try to get it from the redirect location header
+            local redirect_url=$(curl -sI "$url" | grep -i "location:" | cut -d' ' -f2 | tr -d '\r')
+            filename=$(echo "$redirect_url" | sed -n 's/.*filename%3D%22\([^%]*\)%22.*/\1/p')
+        fi
+        
+        # If still no filename, use default
+        if [[ -z "$filename" ]]; then
+            filename="$(basename "$url").safetensors"
+        fi
+        
+        printf "Downloading as: %s\n" "$filename"
+        wget -O "${dir}/${filename}" "$url"
     else
-        wget -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
+        wget --header="Authorization: Bearer $HF_TOKEN" -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$dir" "$url"
     fi
 }
 
