@@ -91,7 +91,7 @@ BBOX=(
     "https://huggingface.co/lmz/candle-yolo-v8/resolve/main/yolov8m.safetensors"
 )
 
-LORA_MODELS=(
+LORAS_MODELS=(
     "https://civitai.com/api/download/models/2032913?type=Model&format=SafeTensor" # ebora style lora
     "https://civitai.com/api/download/models/2078007?type=Model&format=SafeTensor" # qiandaiyiyu style lora
     "https://civitai.com/api/download/models/2132494?type=Model&format=SafeTensor" # BlueArchive Cutscene style
@@ -129,8 +129,8 @@ function provisioning_start() {
         "${COMFYUI_DIR}/models/unet" \
         "${UNET_MODELS[@]}"
     provisioning_get_files \
-        "${COMFYUI_DIR}/models/lora" \
-        "${LORA_MODELS[@]}"
+        "${COMFYUI_DIR}/models/loras" \
+        "${LORAS_MODELS[@]}"
     provisioning_get_files \
         "${COMFYUI_DIR}/models/controlnet" \
         "${CONTROLNET_MODELS[@]}"
