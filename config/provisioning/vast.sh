@@ -250,31 +250,16 @@ function provisioning_download() {
     local url="$1"
     local dir="$2"
     
-    # For Civitai URLs, handle redirect and get filename from final URL
+    # For Civitai URLs, handle auth and filename via headers
     if [[ "$url" == *"civitai.com"* ]]; then
-        printf "Getting filename from Civitai redirect...\n"
+        printf "Downloading from Civitai...\n"
         
-        # Follow redirect and get the final URL
-        local final_url=$(curl -sL -o /dev/null -w '%{url_effective}' "$url")
-        
-        # Extract filename from response-content-disposition parameter in the final URL
-        local filename=$(echo "$final_url" | sed -n 's/.*filename%3D%22\([^%]*\)%22.*/\1/p')
-        
-        # If we couldn't extract filename, try alternative method
-        if [[ -z "$filename" ]]; then
-            # Try to get it from the redirect location header
-            local redirect_url=$(curl -sI "$url" | grep -i "location:" | cut -d' ' -f2 | tr -d '\r')
-            filename=$(echo "$redirect_url" | sed -n 's/.*filename%3D%22\([^%]*\)%22.*/\1/p')
-        fi
-        
-        # If still no filename, use default
-        if [[ -z "$filename" ]]; then
-            filename="$(basename "$url").safetensors"
-        fi
-        
-        printf "Downloading as: %s\n" "$filename"
-        wget -O "${dir}/${filename}" "$url"
+        # 문서를 기반으로 수정된 내용:
+        # 1. --header="Authorization: Bearer ..." : 토큰 인증 추가
+        # 2. --content-disposition : 리다이렉트된 S3 URL의 헤더에서 원본 파일명 자동 추출
+        wget --header="Authorization: Bearer $CIVITAI_TOKEN" -qnc --content-disposition --show-progress -P "$dir" "$url"
     else
+        # HuggingFace (기존 코드 유지)
         wget --header="Authorization: Bearer $HF_TOKEN" -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$dir" "$url"
     fi
 }
